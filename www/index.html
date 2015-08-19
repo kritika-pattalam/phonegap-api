@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2014 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="jquery-mobile/jquery.mobile-1.3.0.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel="stylesheet" type="text/css" href="css/custom.css" />
+        <title>Phonegap API</title>
+    </head>
+    <body onload="StatusBar.hide();">
+        <!-- Main Page -->
+        <div id="main" data-role="page">
+            <!-- Start of header -->
+            <div data-role="header" data-position="fixed">                
+                <h1>Welcome - Phonegap API</h1>
+            </div>
+            <!-- end of header -->
+            <div id="content" data-role="content">
+                <h1>PhoneGap-API</h1>   
+                <p>Click below to see how each API works.</p>             
+
+                <ul data-role="listview"  data-inset="true">                    
+                    <li><a href="#device" onclick="initdevice()">Device</a></li>
+                    <li><a href="#accelerometer" onclick="initaccelerometer()">Accelerometer</a></li>
+                    <li><a href="#camera" onclick="initcamera()">Camera</a></li>                    
+                </ul>
+            
+            </div>
+            <!-- Start of footer -->
+            <div data-role="footer">
+                <h4>Phonegap</h4>
+            </div>  
+            <!-- end of footer-->
+        </div>
+         <!-- Device Page -->
+        <div id="device" data-role="page">
+            <!-- Start of header -->
+            <div data-role="header" data-position="fixed">
+                <a href="#main" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a>
+                <h1>Device</h1>
+            </div>
+            <div data-role="content">
+                <h2>Device</h2>
+                <blockquote>
+                    <p>The <code>device</code> object describes the device's hardware and software.</p>
+                </blockquote>
+                
+                <table id="deviceinfo">
+                    <tr>
+                        <th>Device</th>
+                        <th class="alt">Value</th>
+                    </tr>
+                    <tr>
+                        <td>Name</td>
+                        <td class="alt"><strong id="deviceName">&nbsp;</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Platform</td>
+                        <td class="alt"><strong id="mobilePlatform">&nbsp;</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Mobile Version</td>
+                        <td class="alt"><strong id="mobileVersion">&nbsp;</strong></td>
+                    </tr>
+                    <tr>
+                        <td>PhoneGap Version</td>
+                        <td class="alt"><strong id="version">&nbsp;</strong></td>
+                    </tr>
+                    <tr>
+                        <td>UUID</td>
+                        <td class="alt"><strong id="uuid">&nbsp;</strong></td>
+                    </tr>
+                    <tr>
+                        <th>Screen</th>
+                        <th class="alt">Value</th>
+                    </tr>
+                    <tr>
+                        <td>Width</td>
+                        <td class="alt"><strong id="width">&nbsp;</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Height</td>
+                        <td class="alt"><strong id="height">&nbsp;</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Available Width</td>
+                        <td class="alt"><strong id="availwidth">&nbsp;</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Available Height</td>
+                        <td class="alt"><strong id="availheight">&nbsp;</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Color Depth</td>
+                        <td class="alt"><strong id="colorDepth">&nbsp;</strong></td>
+                    </tr>                   
+                </table>                    
+            </div>            
+        </div>
+        <!-- End od device Page -->
+        <!-- accelerometer Page -->
+        <div id="accelerometer" data-role="page">
+            <!-- Start of header -->
+            <div data-role="header" data-position="fixed">
+                <a href="#main" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a>
+                <h1>Accelerometer</h1>
+            </div>
+            <div data-role="content">
+                <h2>Accelerometer</h2>
+                <blockquote>
+                    <p>Captures device motion in the x, y, and z direction.</p>
+                </blockquote>
+                <table border="1">
+                    <tr> <td>X</td> <td id="x"></td> <tr>
+                    <tr> <td>Y</td> <td id="y"></td> <tr>
+                    <tr> <td>Z</td> <td id="z"></td> <tr>
+                    <tr> <td>Timestamp</td> <td id="timestamp"></td> <tr>
+                </table> 
+                
+                <button onclick="stopWatch()">Stop Watching</button>         
+            </div>
+            
+        </div>
+        <!-- End od accelerometer Page -->
+        <!-- Camera Page -->
+        <div id="camera" data-role="page">
+                        <!-- Start of header -->
+            <div data-role="header" data-position="fixed">
+                <a href="#main" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a>
+                <h1>Camera</h1>
+            </div>
+            <div data-role="content">
+                <h2>Camera</h2>
+                <blockquote>
+                    <p>The <code>camera</code> object provides access to the device's default camera application.</p>
+                </blockquote>
+               <p>
+                Using the PhoneGap Camera API<br /><input type="button" value="Take a Picture" onclick="takePhoto();">
+                </p>
+                <div id="imageContainer"></div>
+            </div>
+           
+        </div> 
+        <!-- end of Camera Page --> 
+        
+        <script type="text/javascript" src="jquery-mobile/jquery-1.8.3.min.js"></script>
+        <script type="text/javascript" src="jquery-mobile/jquery.mobile-1.3.0.min.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script> 
+        <script type="text/javascript" src="js/device.js"></script>
+        <script type="text/javascript" src="js/accelerometer.js"></script>
+        <script type="text/javascript" src="js/camera.js"></script>   
+          
+        
+    </body>
+</html>
