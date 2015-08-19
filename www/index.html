@@ -46,7 +46,9 @@
                 <ul data-role="listview"  data-inset="true">                    
                     <li><a href="#device" onclick="initdevice()">Device</a></li>
                     <li><a href="#accelerometer" onclick="initaccelerometer()">Accelerometer</a></li>
-                    <li><a href="#camera" onclick="initcamera()">Camera</a></li>                    
+                    <li><a href="#camera" onclick="initcamera()">Camera</a></li> 
+                    <li><a href="#capture" onclick="initcapture()">Capture</a></li> 
+                    <li><a href="#connection" onclick="initconnection()">Connection</a></li>                  
                 </ul>
             
             </div>
@@ -166,6 +168,59 @@
            
         </div> 
         <!-- end of Camera Page --> 
+        <div id="capture" data-role="page">
+                        <!-- Start of header -->
+            <div data-role="header">
+                <a href="#main" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a>
+                <h1>Capture</h1>
+            </div>
+            <div data-role="content">
+                <h2>Capture</h2>
+                <blockquote>
+                    <p>Provides access to the device's audio, image, and video capture capabilities.</p>
+                </blockquote>
+                <label for="captureType">Capture Type:</label>
+                <select id="captureType" name="captureType">
+                    <option value="0">Audio</option>
+                    <option value="1">Image</option>
+                    <option value="2">Video</option>
+                </select>
+                <label for="numItems">Number of Items</label>
+                <input type="range" name="numItems" id="numItems" value="1" min="1" max="5" />
+                <label for="duration">Duration</label>
+                <input type="range" name="duration" id="duration" value="5" min="1" max="10" />
+                <input type="button" id="captureButton" value="Capture" onclick="doCapture();">
+                <div id="captureResults"></div>
+            </div>
+            <!-- Start of footer -->
+            <div data-role="footer">
+                <h4>Footer</h4>
+            </div>  
+            <!-- end of footer-->
+        </div> 
+        <!-- end of Capture Page -->
+        <!-- Connection Page -->
+        <div id="connection" data-role="page">
+                        <!-- Start of header -->
+            <div data-role="header">
+                <a href="#main" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a>
+                <h1>Network Connection</h1>
+            </div>
+            <div data-role="content">
+                <h2>Connection</h2>
+                <blockquote>
+                    <p>The <code>connection</code> object, exposed via <code>navigator.connection</code>, provides information about the device's cellular and wifi connection.</p>
+                </blockquote>
+                <div id="network-status">
+                </div>
+            </div>
+            <!-- Start of footer -->
+            <div data-role="footer">
+                <h4>Footer</h4>
+            </div>  
+            <!-- end of footer-->
+        </div> 
+        <!-- end of Connection Page -->
         
         <script type="text/javascript" src="jquery-mobile/jquery-1.8.3.min.js"></script>
         <script type="text/javascript" src="jquery-mobile/jquery.mobile-1.3.0.min.js"></script>
@@ -173,8 +228,11 @@
         <script type="text/javascript" src="js/index.js"></script> 
         <script type="text/javascript" src="js/device.js"></script>
         <script type="text/javascript" src="js/accelerometer.js"></script>
-        <script type="text/javascript" src="js/camera.js"></script>   
+        <script type="text/javascript" src="js/camera.js"></script>  
+        <script type="text/javascript" src="js/capture.js"></script>
+        <script type="text/javascript" src="js/connection.js"></script>  
           
         
     </body>
 </html>
+ 
