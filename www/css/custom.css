@@ -70,7 +70,10 @@ blockquote::before {
     vertical-align:bottom;
     text-align:right;
 }
-
+#stopped
+{
+    font-weight: bold;
+}
 
 .ui-header .ui-title {
     margin-right:20px;
