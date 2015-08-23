@@ -45,18 +45,18 @@ blockquote::before {
     top: -0.3em;
     color: #cecece;
 }
-#deviceinfo {
+#deviceinfo, .table-style {
     border-collapse: collapse;
     width: 95%;
     margin: 20px auto;
 }
-#deviceinfo tr th.alt, #deviceinfo tr td.alt {
+#deviceinfo tr th.alt, #deviceinfo tr td.alt, .table-style tr th.alt, .table-style tr td.alt {
     text-align:left;
 }
-#deviceinfo, th, td {
+#deviceinfo, th, td, .table-style {
     border: 1px solid #0c4982;
 }
-#deviceinfo th {
+#deviceinfo th, .table-style th{
     font-size:1.15em;
     padding-top:4px;
     padding-bottom:4px;
@@ -65,7 +65,7 @@ blockquote::before {
     text-shadow: none;
     height: 1.3em;
 }
-#deviceinfo td, #deviceinfo th {
+#deviceinfo td, #deviceinfo th, .table-style td, .table-style th {
     padding:3px 7px 2px 7px;
     vertical-align:bottom;
     text-align:right;
@@ -111,10 +111,10 @@ blockquote::before {
 
 @media all and (min-width: 1200px){
         
-    #deviceinfo {
+    #deviceinfo, .table-style {
         width:60%;
     }
-    #deviceinfo td, #deviceinfo th {
+    #deviceinfo td, #deviceinfo th, .table-style td, .table-style th {
         font-size: 1.1em;
     }
 }
